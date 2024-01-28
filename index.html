@@ -10,13 +10,25 @@
 
 <body>
   <div class="container">
+    <p>
+      Welcome to my Terminal Portfolio! Type 'help' to see the list of
+      available commands.
+    </p>
+
     <div class="terminal">
-      <p>
-        guest@boatnoah.com:$ ~ <span><input type="text" /></span>
-      </p>
-      <div class="cmd-line"></div>
+      <label for="prompt">
+        <div>
+          <span>guest</span>
+          <span>@</span>
+          <span>boatnoah.com</span>
+          <span>:$ ~ </span>
+          <span><input id="prompt" type="text" autocomplete="off" /></span>
+        </div>
+      </label>
     </div>
   </div>
+  <script type="module" src="main.js"></script>
+  <script type="module" src="commands.js"></script>
 </body>
 
 </html>

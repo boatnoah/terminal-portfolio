@@ -12,3 +12,7 @@ input {
   background-color: black;
   color: white;
 }
+
+ul {
+  list-style-position: none;
+}
