@@ -5,6 +5,8 @@ const resume = "https://www.resume.lol/share/lb03iae";
 const email = "noahkimCS@gmail.com";
 
 const help = [
+  "<li> Press <kbd>tab</kbd> for auto-completion and use up and down arrows for previous commands.</li>",
+  "<br>",
   "<li>aboutme        - Get to know me! <i class='fa-solid fa-user'></i></li>",
   "<li>projects       - See the latest projects I've built <i class='fa-solid fa-folder'></i></li>",
   "<li>socials        - Displays my socials <i class='fa-solid fa-hashtag'></i></li>",
