@@ -26,6 +26,7 @@ input {
   font-size: 100%;
   margin-left: 10px;
   width: 83%;
+  position: fixed;
 }
 
 a {
