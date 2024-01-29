@@ -6,38 +6,81 @@ import {
   email,
   help,
   aboutme,
+  commands,
   projects,
   socials,
 } from "./commands.js";
-
 const container = document.querySelector(".container");
 const input = document.getElementById("prompt");
+let previousCmds = []; // stack ds
+let index = 1;
+
 window.addEventListener("keydown", handleEnter);
+window.addEventListener("keydown", handleUpArrow);
+window.addEventListener("keydown", handleDownArrow);
+window.addEventListener("keydown", handleTabCompletion);
 
 function handleEnter(event) {
   if (event.key === "Enter") {
     const userCmd = input.value;
-    // call function command
-    console.log(userCmd);
-
+    previousCmds.push(userCmd);
+    if (userCmd === "clear") {
+      // return early if it is a clear cmd to avoid creating a new div
+      previousCmds.push(userCmd);
+      command(userCmd, null);
+      input.value = "";
+      return;
+    }
     const newDiv = document.createElement("div");
-    newDiv.classList = "terminal";
+    newDiv.classList = "output";
     newDiv.innerHTML = `
             <div>
-              <span>guest</span>
-              <span>@</span>
-              <span>boatnoah.com</span>
-              <span>:$ ~ </span>
-              <span>${userCmd}</span>
+              <span class="green nospace">guest</span>
+              <span class="light-dark nospace">@</span>
+              <span class="purple nospace">boatnoah.com</span>
+              <span class="light-dark nospace">:$ ~ </span>
+              <span class="space">${userCmd}</span>
             </div>
             <div class="cmd-line"></div>
           `;
     const newOutput = newDiv.querySelector(".cmd-line");
-
     command(userCmd, newOutput);
     container.insertBefore(newDiv, container.lastElementChild);
     input.value = "";
     input.focus();
+  }
+}
+
+function handleUpArrow(event) {
+  if (event.key === "ArrowUp" && previousCmds.length !== 0) {
+    event.preventDefault();
+    input.value = previousCmds[previousCmds.length - index];
+    if (!(index + 1 > previousCmds.length)) {
+      index++;
+    }
+  }
+}
+
+function handleDownArrow(event) {
+  if (event.key === "ArrowDown" && previousCmds.length !== 0) {
+    event.preventDefault();
+    input.value = previousCmds[previousCmds.length - index];
+    if (index - 1 !== 0) {
+      index--;
+    }
+  }
+}
+
+function handleTabCompletion(event) {
+  if (event.key === "Tab") {
+    event.preventDefault();
+    const incompleteWord = input.value.toLowerCase();
+    const match = commands.filter((command) =>
+      command.startsWith(incompleteWord),
+    );
+    if (match.length > 0) {
+      input.value = match[0];
+    }
   }
 }
 
@@ -88,15 +131,20 @@ function command(cmd, terminal) {
       break;
 
     case "clear":
+      clearContent();
       break;
 
     case "chess":
       addLine(chess, terminal);
       break;
 
+    case "":
+      addLine("", terminal);
+      break;
+
     default:
       addLine(
-        "<p>Command not found. For a list of commands, type 'help'.</p>",
+        `<p>zsh: command not found: ${cmd}. For a list of commands, type 'help'.</p>`,
         terminal,
       );
   }
@@ -113,7 +161,18 @@ function addLine(text, outputSpace) {
 }
 
 function newTab(link) {
-  setTimeout(function() {
+  input.focus();
+  setTimeout(function () {
     window.open(link, "_blank");
   }, 500);
+}
+
+function clearContent() {
+  const contentList = container.querySelectorAll(".output");
+  console.log(contentList);
+  contentList.forEach((element) => {
+    console.log(element);
+    element.remove();
+  });
+  console.log(contentList);
 }

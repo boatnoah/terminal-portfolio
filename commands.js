@@ -5,39 +5,57 @@ const resume = "https://www.resume.lol/share/lb03iae";
 const email = "noahkimCS@gmail.com";
 
 const help = [
-  "<p>aboutme        - Get to know me!</p>",
-  "<p>projects       - See the latest projects I've built</p>",
-  "<p>socials        - Displays my socials</p>",
-  "<p>linkedin       - Check out my LinkedIn</p>",
-  "<p>tiktok         - Check out my TikTok</p>",
-  "<p>github         - My GitHub profile</p>",
-  "<p>resume         - Check out my resume</p>",
-  "<p>email          - Shoot me an email</p>",
-  "<p>clear          - Clear Terminal</p>",
-  "<p>chess          - Coming Soon...</p>",
+  "<li>aboutme        - Get to know me! <i class='fa-solid fa-user'></i></li>",
+  "<li>projects       - See the latest projects I've built <i class='fa-solid fa-folder'></i></li>",
+  "<li>socials        - Displays my socials <i class='fa-solid fa-hashtag'></i></li>",
+  "<li>linkedin       - Check out my LinkedIn <i class='fa-brands fa-linkedin'></i></li>",
+  "<li>tiktok         - Check out my TikTok <i class='fa-brands fa-tiktok'></li>",
+  "<li>github         - My GitHub profile <i class='fa-brands fa-github'></i></li>",
+  "<li>resume         - Check out my resume <i class='fa-solid fa-bars'></i></li>",
+  "<li>email          - Shoot me an email <i class='fa-solid fa-envelope'></i></li>",
+  "<li>clear          - Clear Terminal <i class='fa-solid fa-terminal'></i></li>",
+  "<li>chess          - Coming Soon...<i class='fa-solid fa-chess'></i></li>",
 ];
 
 const aboutme = [
-  "Hey, I'm Noah!",
-  "I'm currently a 2nd-year student at California State University, Long Beach",
-  "studying Computer Science. I enjoy coding, teaching others to code, and learning more about it.",
-  "So for the past year, I have been working as a coding coach teaching kids aged 8-12",
-  "the basics of programming. As a coach, I focus on developing projects that I have made into small",
-  "coding lessons and ensuring each child progresses in their programming.",
-  "I'm excited to be on this journey of growth and development, and",
-  "I can't wait to see what the future holds in this rapidly evolving field.",
+  " Hey, I'm Noah!",
+  " I'm currently a 2nd-year student at California State University, Long Beach",
+  " studying Computer Science. I enjoy coding, teaching others to code, and learning more about it.",
+  " So for the past year, I have been working as a coding coach teaching kids aged 8-12",
+  " the basics of programming. As a coach, I focus on developing projects that I have made into small",
+  " coding lessons and ensuring each child progresses in their programming.",
+  " I'm excited to be on this journey of growth and development, and",
+  " I can't wait to see what the future holds in this rapidly evolving field.",
+];
+
+const commands = [
+  "help",
+  "aboutme",
+  "projects",
+  "socials",
+  "linkedin",
+  "tiktok",
+  "github",
+  "resume",
+  "email",
+  "clear",
+  "chess",
 ];
 
 const projects = [
-  `<li><a href="https://boatnoah.github.io/Pathfinding-Project/" target="_blank">Pathfinding Visualizer</a> - Visualize how popular pathfinding algorithms work!</li>`,
-  `<li><a href="https://github.com/boatnoah/Chess-Game-Project" target="_blank">Chess</a> - Play a fun chess game!</li>`,
-  `<li><a href="https://github.com/boatnoah/TicTacToeAI-Django" target="_blank">Tic-Tac-Toe AI</a> - See how AI has solved Tic-Tac-Toe!</li>`,
+  "<br>",
+  `<li><a href="https://boatnoah.github.io/Pathfinding-Project/" target="_blank"><u>Pathfinding Visualizer </u> <i class="fa-solid fa-map-pin"></i></a> - Visualize how popular pathfinding algorithms work!</li>`,
+  `<li><a href="https://github.com/boatnoah/Chess-Game-Project" target="_blank"><u>Chess</u> <i class="fa-solid fa-chess"></i></a> - Play a fun chess game!</li>`,
+  `<li><a href="https://github.com/boatnoah/TicTacToeAI-Django" target="_blank"><u>Tic-Tac-Toe AI</u> <i class="fa-solid fa-robot"></i></a> - See how AI has solved Tic-Tac-Toe!</li>`,
+  "<br>",
 ];
 
 const socials = [
-  `<li>LinkedIn                           : <span><a href="${linkedin}" target="_blank">linkedin/noah-kim-cs</a></li></span>`,
-  `<li>TikTok                             : <span><a href="${tiktok}" target="_blank">tiktok/csboat</a></li></span>`,
-  `<li>GitHub                             : <span><a href="${github}" target="_blank">github/boatnoah</a></li></span>`,
+  "<br>",
+  `<li><a href="${linkedin}" target="_blank"> <i class="fa-brands fa-linkedin"></i> <u>linkedin/noah-kim-cs</u></a></li>`,
+  `<li><a href="${tiktok}" target="_blank">   <i class="fa-brands fa-tiktok"></i> <u>tiktok/csboat</u></a></li>`,
+  `<li><a href="${github}" target="_blank">   <i class="fa-brands fa-github"></i> <u>github/boatnoah</u></a></li>`,
+  "<br>",
 ];
 
 export {
@@ -49,5 +67,6 @@ export {
   help,
   aboutme,
   projects,
+  commands,
   socials,
 };

@@ -1,18 +1,59 @@
+@font-face {
+  font-family: "Cascadia Code";
+  src: url("./assets/CascadiaCode/CaskaydiaCoveNerdFont-Regular.ttf");
+}
+
 body {
   margin: 0;
   padding: 0;
-  background-color: black;
-  color: white;
+  background-color: #24292e;
+  color: #fafbfc;
+  font-family: "Cascadia Code";
+  font-size: 100%;
+}
+
+.container {
+  margin: 20px;
 }
 
 input {
   border: none;
   outline: none;
   margin: 0;
-  background-color: black;
-  color: white;
+  background-color: #24292e;
+  color: #fafbfc;
+  font-family: "Cascadia Code";
+  font-size: 100%;
+  margin-left: 10px;
 }
 
-ul {
-  list-style-position: none;
+a {
+  color: #0d74e7;
+  text-decoration: none;
+}
+
+li {
+  list-style-type: none;
+}
+
+.green {
+  color: #2fbb4f;
+}
+
+.light-dark {
+  color: #d3d3d3;
+}
+
+.purple {
+  color: #b026ff;
+}
+
+.nospace {
+  display: inline-block;
+  margin-right: -10px;
+}
+
+.space {
+  display: inline-block;
+  margin-left: 12px;
 }
