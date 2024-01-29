@@ -2,7 +2,7 @@ const linkedin = "https://www.linkedin.com/in/noah-kim-cs/";
 const tiktok = "https://www.tiktok.com/@csboat?_t=8jNKJzYnmVm&_r=1";
 const github = "https://github.com/boatnoah";
 const resume = "https://www.resume.lol/share/lb03iae";
-const email = "noahkimCS@gmail.com";
+const email = "mailto:noahkimCS@gmail.com";
 
 const help = [
   "<li> Press <kbd>tab</kbd> for auto-completion and use up and down arrows for previous commands.</li>",

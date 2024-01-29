@@ -174,5 +174,4 @@ function clearContent() {
     console.log(element);
     element.remove();
   });
-  console.log(contentList);
 }
