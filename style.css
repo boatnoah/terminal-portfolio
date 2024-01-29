@@ -20,6 +20,10 @@ input {
   border: none;
   outline: none;
   margin: 0;
+  margin-bottom: 0;
+  margin-top: 0;
+  padding-left: 12px;
+  margin-left: 12px;
   background-color: #24292e;
   color: #fafbfc;
   font-family: "Cascadia Code";
