@@ -135,7 +135,7 @@ function command(cmd, terminal) {
       break;
 
     case "chess":
-      addLine(chess, terminal);
+      addLine("Coming Soon...", terminal);
       break;
 
     case "":
