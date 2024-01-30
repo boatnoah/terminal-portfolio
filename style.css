@@ -3,6 +3,10 @@
   src: url("./assets/CascadiaCode/CaskaydiaCoveNerdFont-Regular.ttf");
 }
 
+html {
+  overflow: hidden;
+}
+
 body {
   margin: 0;
   padding: 0;
