@@ -4,6 +4,7 @@ import {
   github,
   resume,
   email,
+  gui,
   help,
   aboutme,
   commands,
@@ -22,6 +23,7 @@ window.addEventListener("keydown", handleTabCompletion);
 
 function handleEnter(event) {
   if (event.key === "Enter") {
+    event.preventDefault();
     const userCmd = input.value;
     previousCmds.push(userCmd);
     if (userCmd === "clear") {
@@ -29,12 +31,13 @@ function handleEnter(event) {
       previousCmds.push(userCmd);
       command(userCmd, null);
       input.value = "";
+      scrollToCurrentInput();
       return;
     }
     const newDiv = document.createElement("div");
     newDiv.classList = "output";
     newDiv.innerHTML = `
-            <div>
+            <div class="flexbox">
               <span class="green nospace">guest</span>
               <span class="light-dark nospace">@</span>
               <span class="purple nospace">boatnoah.com</span>
@@ -47,7 +50,7 @@ function handleEnter(event) {
     command(userCmd, newOutput);
     container.insertBefore(newDiv, container.lastElementChild);
     input.value = "";
-    input.focus();
+    scrollToCurrentInput();
   }
 }
 
@@ -130,6 +133,10 @@ function command(cmd, terminal) {
       newTab(email);
       break;
 
+    case "gui":
+      addLine("Opening gui...", terminal);
+      newTab(gui);
+
     case "clear":
       clearContent();
       break;
@@ -161,17 +168,22 @@ function addLine(text, outputSpace) {
 }
 
 function newTab(link) {
-  input.focus();
-  setTimeout(function () {
+  scrollToCurrentInput();
+  setTimeout(function() {
     window.open(link, "_blank");
   }, 500);
 }
 
 function clearContent() {
   const contentList = container.querySelectorAll(".output");
-  console.log(contentList);
   contentList.forEach((element) => {
     console.log(element);
     element.remove();
   });
+  scrollToCurrentInput();
+}
+
+function scrollToCurrentInput() {
+  window.scrollTo(0, document.body.offsetHeight);
+  input.focus();
 }

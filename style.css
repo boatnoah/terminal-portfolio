@@ -16,21 +16,25 @@ body {
   margin: 20px;
 }
 
+kbd {
+  background-color: #fafbfc;
+  color: #24292e;
+}
+
 input {
   border: none;
   outline: none;
-  margin: 0;
-  margin-bottom: 0;
-  margin-top: 0;
-  padding-left: 12px;
-  margin-left: 12px;
   background-color: #24292e;
   color: #fafbfc;
   font-family: "Cascadia Code";
   font-size: 100%;
-  margin-left: 10px;
   width: 83%;
-  position: fixed;
+  margin: 0px 0px 0px 10.5px;
+  padding: 0px;
+}
+
+.flexbox {
+  display: flex;
 }
 
 a {
@@ -56,10 +60,10 @@ li {
 
 .nospace {
   display: inline-block;
-  margin-right: -10px;
+  margin-right: 0px;
 }
 
 .space {
   display: inline-block;
-  margin-left: 12px;
+  margin-left: 10.5px;
 }

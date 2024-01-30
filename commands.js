@@ -3,6 +3,7 @@ const tiktok = "https://www.tiktok.com/@csboat?_t=8jNKJzYnmVm&_r=1";
 const github = "https://github.com/boatnoah";
 const resume = "https://www.resume.lol/share/lb03iae";
 const email = "mailto:noahkimCS@gmail.com";
+const gui = "https://boatnoah.github.io/personal-web/";
 
 const help = [
   "<li> Press <kbd>tab</kbd> for auto-completion and use up and down arrows for previous commands.</li>",
@@ -14,6 +15,7 @@ const help = [
   "<li>tiktok         - Check out my TikTok <i class='fa-brands fa-tiktok'></li>",
   "<li>github         - My GitHub profile <i class='fa-brands fa-github'></i></li>",
   "<li>resume         - Check out my resume <i class='fa-solid fa-bars'></i></li>",
+  "<li>gui            - See a simpler version of my website <i class='fa-solid fa-window-maximize'></i></li>",
   "<li>email          - Shoot me an email <i class='fa-solid fa-envelope'></i></li>",
   "<li>clear          - Clear Terminal <i class='fa-solid fa-terminal'></i></li>",
   "<li>chess          - Coming Soon...<i class='fa-solid fa-chess'></i></li>",
@@ -40,6 +42,7 @@ const commands = [
   "github",
   "resume",
   "email",
+  "gui",
   "clear",
   "chess",
 ];
@@ -71,4 +74,5 @@ export {
   projects,
   commands,
   socials,
+  gui,
 };
