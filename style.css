@@ -71,3 +71,80 @@ li {
   display: inline-block;
   margin-left: 10.5px;
 }
+
+/* -------------Settings Style-------------- */
+/* styles.css */
+
+.setting {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  font-family: "Cascadia Code";
+}
+
+#settingsButton {
+  padding: 10px 20px;
+  margin-bottom: 20px;
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+#settingsDialog {
+  width: 300px;
+  padding: 20px;
+  border: none;
+  background-color: #f3f3f3;
+}
+
+#settingsDialog form {
+  display: flex;
+  flex-direction: column;
+}
+
+#settingsDialog label {
+  margin-bottom: 10px;
+}
+
+#settingsDialog select,
+#settingsDialog input {
+  margin-bottom: 20px;
+  padding: 10px;
+}
+
+#settingsDialog button {
+  padding: 10px 20px;
+  color: black;
+  background-color: #f3f3f3;
+  border: none;
+  cursor: pointer;
+}
+
+#settingsDialog button:hover {
+  color: white;
+  background-color: black;
+}
+
+#closeButton {
+  position: relative;
+  font-size: 1.2em;
+  cursor: pointer;
+  background-color: #f3f3f3;
+}
+
+#closeButton:hover {
+  position: relative;
+  font-size: 1.2em;
+  cursor: pointer;
+  color: white;
+  background-color: black;
+  border: none;
+  border-radius: 10px;
+}
+
+
