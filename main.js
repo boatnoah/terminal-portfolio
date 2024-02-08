@@ -1,6 +1,5 @@
 import {
   linkedin,
-  tiktok,
   github,
   resume,
   email,
@@ -38,9 +37,9 @@ function handleEnter(event) {
     newDiv.classList = "output";
     newDiv.innerHTML = `
             <div class="flexbox">
-              <span class="green nospace">guest</span>
+              <span id="guest">guest</span>
               <span class="light-dark nospace">@</span>
-              <span class="purple nospace">boatnoah.com</span>
+              <span id="hostname">laansdole.github.io</span>
               <span class="light-dark nospace">:$ ~ </span>
               <span class="space">${userCmd}</span>
             </div>
@@ -108,11 +107,6 @@ function command(cmd, terminal) {
     case "linkedin":
       addLine("Opening LinkedIn...", terminal);
       newTab(linkedin);
-      break;
-
-    case "tiktok":
-      addLine("Opening TikTok...", terminal);
-      newTab(tiktok);
       break;
 
     case "github":

@@ -1,5 +1,4 @@
 const linkedin = "https://www.linkedin.com/in/noah-kim-cs/";
-const tiktok = "https://www.tiktok.com/@csboat?_t=8jNKJzYnmVm&_r=1";
 const github = "https://github.com/boatnoah";
 const resume = "https://www.resume.lol/share/lb03iae";
 const email = "mailto:noahkimCS@gmail.com";
@@ -12,7 +11,6 @@ const help = [
   "<li>projects       - See the latest projects I've built <i class='fa-solid fa-folder'></i></li>",
   "<li>socials        - Displays my socials <i class='fa-solid fa-hashtag'></i></li>",
   "<li>linkedin       - Check out my LinkedIn <i class='fa-brands fa-linkedin'></i></li>",
-  "<li>tiktok         - Check out my TikTok <i class='fa-brands fa-tiktok'></li>",
   "<li>github         - My GitHub profile <i class='fa-brands fa-github'></i></li>",
   "<li>resume         - Check out my resume <i class='fa-solid fa-bars'></i></li>",
   "<li>gui            - See a simpler version of my website <i class='fa-solid fa-window-maximize'></i></li>",
@@ -65,7 +63,6 @@ const socials = [
 
 export {
   linkedin,
-  tiktok,
   github,
   resume,
   email,
