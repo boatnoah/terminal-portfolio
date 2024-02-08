@@ -9,7 +9,6 @@ const help = [
   "<br>",
   "<li>aboutme        - Get to know me! <i class='fa-solid fa-user'></i></li>",
   "<li>projects       - See the latest projects I've built <i class='fa-solid fa-folder'></i></li>",
-  "<li>socials        - Displays my socials <i class='fa-solid fa-hashtag'></i></li>",
   "<li>linkedin       - Check out my LinkedIn <i class='fa-brands fa-linkedin'></i></li>",
   "<li>github         - My GitHub profile <i class='fa-brands fa-github'></i></li>",
   "<li>resume         - Check out my resume <i class='fa-solid fa-bars'></i></li>",
@@ -34,9 +33,7 @@ const commands = [
   "help",
   "aboutme",
   "projects",
-  "socials",
   "linkedin",
-  "tiktok",
   "github",
   "resume",
   "email",
@@ -53,14 +50,6 @@ const projects = [
   "<br>",
 ];
 
-const socials = [
-  "<br>",
-  `<li><a href="${linkedin}" target="_blank"> <i class="fa-brands fa-linkedin"></i> <u>linkedin/noah-kim-cs</u></a></li>`,
-  `<li><a href="${tiktok}" target="_blank">   <i class="fa-brands fa-tiktok"></i> <u>tiktok/csboat</u></a></li>`,
-  `<li><a href="${github}" target="_blank">   <i class="fa-brands fa-github"></i> <u>github/boatnoah</u></a></li>`,
-  "<br>",
-];
-
 export {
   linkedin,
   github,
@@ -70,6 +59,5 @@ export {
   aboutme,
   projects,
   commands,
-  socials,
   gui,
 };

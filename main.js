@@ -8,7 +8,6 @@ import {
   aboutme,
   commands,
   projects,
-  socials,
 } from "./commands.js";
 const container = document.querySelector(".container");
 const input = document.getElementById("prompt");
@@ -98,10 +97,6 @@ function command(cmd, terminal) {
 
     case "projects":
       addLine(projects, terminal);
-      break;
-
-    case "socials":
-      addLine(socials, terminal);
       break;
 
     case "linkedin":
