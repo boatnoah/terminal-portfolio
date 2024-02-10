@@ -33,7 +33,7 @@ input {
   font-family: "Cascadia Code";
   font-size: 100%;
   width: 83%;
-  margin: 0px 0px 0px 10.5px;
+  margin: 0px 0px 0px 9.5px;
   padding: 0px;
 }
 
@@ -69,5 +69,13 @@ li {
 
 .space {
   display: inline-block;
-  margin-left: 10.5px;
+  margin-left: 9.5px;
+}
+
+/* Mobile devices */
+
+@media only screen and (max-width: 600px) {
+  #logo {
+    font-size: 7px;
+  }
 }
