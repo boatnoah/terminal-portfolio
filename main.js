@@ -37,7 +37,8 @@ function handleEnter(event) {
               <span id="guest">guest</span>
               <span class="light-dark nospace">@</span>
               <span id="hostname">laansdole.github.io</span>
-              <span class="light-dark nospace">:$ ~ </span>
+              <span class="light-dark nospace">:</span>
+              <span class="light-dark space">$</span>
               <span class="space">${userCmd}</span>
             </div>
             <div class="cmd-line"></div>
@@ -114,11 +115,11 @@ function command(cmd, terminal) {
       );
       newTab(email);
       break;
-      
+
     case "clear":
       clearContent();
       break;
-      
+
     case "":
       addLine("", terminal);
       break;
@@ -143,7 +144,7 @@ function addLine(text, outputSpace) {
 
 function newTab(link) {
   scrollToCurrentInput();
-  setTimeout(function() {
+  setTimeout(function () {
     window.open(link, "_blank");
   }, 500);
 }

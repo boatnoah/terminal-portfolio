@@ -1,72 +1,106 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Terminal Portfolio | laansdole</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Terminal Portfolio | laansdole</title>
-  <link rel="stylesheet" type="text/css" href="style.css" />
-</head>
-
-<body>
-  <div class="container">
-    <p>
-      <pre>
+  <body>
+    <div class="container">
+      <pre id="laansdole-logo">
 
 
-         _       ___     ___    _  _     ___     ___     ___     _       ___   
-        | |     /   \   /   \  | \| |   / __|   |   \   / _ \   | |     | __|  
-        | |__   | - |   | - |  | .` |   \__ \   | |) | | (_) |  | |__   | _|   
-        |____|  |_|_|   |_|_|  |_|\_|   |___/   |___/   \___/   |____|  |___|  
-      _|"""""|_|"""""|_|"""""|_|"""""|_|"""""|_|"""""|_|"""""|_|"""""|_|"""""| 
-      "`-0-0-'"`-0-0-'"`-0-0-'"`-0-0-'"`-0-0-'"`-0-0-'"`-0-0-'"`-0-0-'"`-0-0-' 
-      
-                                                                     
-      </pre>
-      Welcome to my Terminal Portfolio! Type 'help' to see the list of
-      available commands.
+        _       ___     ___    _  _     ___     ___     ___     _       ___   
+      | |     /   \   /   \  | \| |   / __|   |   \   / _ \   | |     | __|  
+      | |__   | - |   | - |  | .` |   \__ \   | |) | | (_) |  | |__   | _|   
+      |____|  |_|_|   |_|_|  |_|\_|   |___/   |___/   \___/   |____|  |___|  
+    _|"""""|_|"""""|_|"""""|_|"""""|_|"""""|_|"""""|_|"""""|_|"""""|_|"""""| 
+    "`-0-0-'"`-0-0-'"`-0-0-'"`-0-0-'"`-0-0-'"`-0-0-'"`-0-0-'"`-0-0-'"`-0-0-' 
+    
+                                                                    
+    </pre
+      >
+      Welcome to my Terminal Portfolio! Have fun!
       <div class="setting">
         <button id="settingsButton">Terminal Settings</button>
 
         <dialog id="settingsDialog">
           <form method="dialog">
             <select id="fontSelector" title="Choose a font">
-              <option value="CaskaydiaCoveNerdFont-Bold">CaskaydiaCoveNerdFont-Bold</option>
-              <option value="CaskaydiaCoveNerdFont-BoldItalic">CaskaydiaCoveNerdFont-BoldItalic</option>
-              <option value="CaskaydiaCoveNerdFont-ExtraLight">CaskaydiaCoveNerdFont-ExtraLight</option>
-              <option value="CaskaydiaCoveNerdFont-ExtraLightItalic">CaskaydiaCoveNerdFont-ExtraLightItalic</option>
-              <option value="CaskaydiaCoveNerdFont-Italic">CaskaydiaCoveNerdFont-Italic</option>
+              <option value="CaskaydiaCoveNerdFont-Bold">
+                CaskaydiaCoveNerdFont-Bold
+              </option>
+              <option value="CaskaydiaCoveNerdFont-BoldItalic">
+                CaskaydiaCoveNerdFont-BoldItalic
+              </option>
+              <option value="CaskaydiaCoveNerdFont-ExtraLight">
+                CaskaydiaCoveNerdFont-ExtraLight
+              </option>
+              <option value="CaskaydiaCoveNerdFont-ExtraLightItalic">
+                CaskaydiaCoveNerdFont-ExtraLightItalic
+              </option>
+              <option value="CaskaydiaCoveNerdFont-Italic">
+                CaskaydiaCoveNerdFont-Italic
+              </option>
             </select>
-            <label id="labelGuestColor" for="guestColorSelector">Guest Color:</label>
-            <input type="color" id="guestColorSelector" value="#2fbb4f">
+            <label id="labelGuestColor" for="guestColorSelector"
+              >Guest Color:</label
+            >
+            <input type="color" id="guestColorSelector" value="#2fbb4f" />
 
-            <label id="labelHostnameColor" for="hostnameColorSelector">Hostname Color:</label>
-            <input type="color" id="hostnameColorSelector" value="#b026ff">
-          
+            <label id="labelHostnameColor" for="hostnameColorSelector"
+              >Hostname Color:</label
+            >
+            <input type="color" id="hostnameColorSelector" value="#b026ff" />
+
             <button onclick="changeSettings()">Apply Settings</button>
-            <button type="button" onclick="resetSettings()">Reset to Default</button>
+            <button type="button" onclick="resetSettings()">
+              Reset to Default
+            </button>
           </form>
           <button id="closeButton">x</button>
         </dialog>
       </div>
-    </p>
 
-    <div class="terminal">
-      <label for="prompt">
-        <div class="flexbox">
-          <span id="guest" class="green nospace">guest</span>
-          <span class="light-dark nospace">@</span>
-          <span id="hostname" class="purple nospace">laansdole.github.io</span>
-          <span class="light-dark nospace">:$ ~ </span>
-          <span><input id="prompt" type="text" autocomplete="on" autofocus/></span>
-        </div>
-      </label>
+      <div class="terminal">
+        <label for="prompt">
+          <div class="flexbox">
+            <span id="guest" class="green nospace">guest</span>
+            <span class="light-dark nospace">@</span>
+            <span id="hostname" class="purple nospace">laansdole.github.io</span>
+            <!-- <span class="light-dark nospace">:$ ~ </span> -->
+            <span class="light-dark nospace">:</span>
+            <span class="light-dark space">$</span>
+            <span><input id="prompt" type="text" placeholder="help" autocomplete="on" autofocus/></span>
+          </div>
+        </label>
+      </div>
     </div>
-  </div>
-  <script type="module" src="main.js"></script>
-  <script type="module" src="commands.js"></script>
-  <script src="./settings.js"></script>
-  <script src="https://kit.fontawesome.com/f70b7637af.js" crossorigin="anonymous"></script>
-</body>
+    <script type="module" src="main.js"></script>
+    <script type="module" src="commands.js"></script>
+    <script src="./settings.js"></script>
+    <script
+      src="https://kit.fontawesome.com/f70b7637af.js"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      window.addEventListener('resize', function() {
+          var mq = window.matchMedia('(max-width: 600px)');
+          var hostnameElement = document.getElementById('hostname');
 
+          if (mq.matches) {
+              // If the screen width is less than or equal to 600px
+              hostnameElement.textContent = 'laansdole';
+          } else {
+              // If the screen width is greater than 600px
+              hostnameElement.textContent = 'laansdole.github.io';
+          }
+      });
+
+      // Call the function at run time
+      window.dispatchEvent(new Event('resize'));
+    </script>
+  </body>
 </html>

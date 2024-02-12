@@ -32,8 +32,8 @@ input {
   color: #fafbfc;
   font-family: "Cascadia Code";
   font-size: 100%;
-  width: 83%;
-  margin: 0px 0px 0px 10.5px;
+  width: 100%;
+  /* margin-left: 9.5px; */
   padding: 0px;
 }
 
@@ -62,18 +62,29 @@ li {
   color: #b026ff;
 }
 
-.nospace {
-  display: inline-block;
-  margin-right: 0px;
-}
-
 .space {
   display: inline-block;
-  margin-left: 10.5px;
+  margin-right: 9.5px;
+}
+
+/* Mobile devices */
+
+@media only screen and (max-width: 600px) {
+  #laansdole-logo {
+    transform: scale(0.55);
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 100% !important;
+  }
+
+  body {
+    font-size: 85%;
+  }
 }
 
 /* -------------Settings Style-------------- */
-/* styles.css */
 
 .setting {
   width: 100%;
@@ -146,5 +157,3 @@ li {
   border: none;
   border-radius: 10px;
 }
-
-
