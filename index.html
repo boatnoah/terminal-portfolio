@@ -10,8 +10,7 @@
 
 <body>
   <div class="container">
-    <p>
-      <pre>
+    <pre id="logo">
 
 ██████╗  ██████╗  █████╗ ████████╗███╗   ██╗ ██████╗  █████╗ ██╗  ██╗
 ██╔══██╗██╔═══██╗██╔══██╗╚══██╔══╝████╗  ██║██╔═══██╗██╔══██╗██║  ██║
@@ -19,35 +18,34 @@
 ██╔══██╗██║   ██║██╔══██║   ██║   ██║╚██╗██║██║   ██║██╔══██║██╔══██║
 ██████╔╝╚██████╔╝██║  ██║   ██║   ██║ ╚████║╚██████╔╝██║  ██║██║  ██║
 ╚═════╝  ╚═════╝ ╚═╝  ╚═╝   ╚═╝   ╚═╝  ╚═══╝ ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝
-                                                                     
-      </pre>
-      Welcome to my Terminal Portfolio! Type 'help' to see the list of
-      available commands.
-      <div class="setting">
-        <button id="settingsButton">Open Settings</button>
+                                                                    
+    </pre>
+    Welcome to my Terminal Portfolio! Type 'help' to see the list of
+    available commands.
+    <div class="setting">
+      <button id="settingsButton">Open Settings</button>
 
-        <dialog id="settingsDialog">
-          <form method="dialog">
-            <select id="fontSelector" title="Choose a font">
-              <option value="CaskaydiaCoveNerdFont-Bold">CaskaydiaCoveNerdFont-Bold</option>
-              <option value="CaskaydiaCoveNerdFont-BoldItalic">CaskaydiaCoveNerdFont-BoldItalic</option>
-              <option value="CaskaydiaCoveNerdFont-ExtraLight">CaskaydiaCoveNerdFont-ExtraLight</option>
-              <option value="CaskaydiaCoveNerdFont-ExtraLightItalic">CaskaydiaCoveNerdFont-ExtraLightItalic</option>
-              <option value="CaskaydiaCoveNerdFont-Italic">CaskaydiaCoveNerdFont-Italic</option>
-            </select>
-            <label id="labelGuestColor" for="guestColorSelector">Guest Color:</label>
-            <input type="color" id="guestColorSelector" value="#2fbb4f">
+      <dialog id="settingsDialog">
+        <form method="dialog">
+          <select id="fontSelector" title="Choose a font">
+            <option value="CaskaydiaCoveNerdFont-Bold">CaskaydiaCoveNerdFont-Bold</option>
+            <option value="CaskaydiaCoveNerdFont-BoldItalic">CaskaydiaCoveNerdFont-BoldItalic</option>
+            <option value="CaskaydiaCoveNerdFont-ExtraLight">CaskaydiaCoveNerdFont-ExtraLight</option>
+            <option value="CaskaydiaCoveNerdFont-ExtraLightItalic">CaskaydiaCoveNerdFont-ExtraLightItalic</option>
+            <option value="CaskaydiaCoveNerdFont-Italic">CaskaydiaCoveNerdFont-Italic</option>
+          </select>
+          <label id="labelGuestColor" for="guestColorSelector">Guest Color:</label>
+          <input type="color" id="guestColorSelector" value="#2fbb4f">
 
-            <label id="labelHostnameColor" for="hostnameColorSelector">Hostname Color:</label>
-            <input type="color" id="hostnameColorSelector" value="#b026ff">
-          
-            <button onclick="changeSettings()">Apply Settings</button>
-            <button type="button" onclick="resetSettings()">Reset to Default</button>
-          </form>
-          <button id="closeButton">X</button>
-        </dialog>
-      </div>
-    </p>
+          <label id="labelHostnameColor" for="hostnameColorSelector">Hostname Color:</label>
+          <input type="color" id="hostnameColorSelector" value="#b026ff">
+        
+          <button onclick="changeSettings()">Apply Settings</button>
+          <button type="button" onclick="resetSettings()">Reset to Default</button>
+        </form>
+        <button id="closeButton">X</button>
+      </dialog>
+    </div>
 
     <div class="terminal">
       <label for="prompt">
@@ -55,7 +53,9 @@
           <span id="guest" class="green nospace">guest</span>
           <span class="light-dark nospace">@</span>
           <span id="hostname" class="purple nospace">boatnoah.com</span>
-          <span class="light-dark nospace">:$ ~ </span>
+          <span class="light-dark nospace">:</span>
+          <span class="light-dark nospace">$</span>
+          <span class="light-dark space">~</span>
           <span><input id="prompt" type="text" autocomplete="off" autofocus/></span>
         </div>
       </label>
