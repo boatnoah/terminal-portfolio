@@ -38,9 +38,9 @@ function handleEnter(event) {
     newDiv.classList = "output";
     newDiv.innerHTML = `
             <div class="flexbox">
-              <span class="green nospace">guest</span>
+              <span id="guest" class="green nospace">guest</span>
               <span class="light-dark nospace">@</span>
-              <span class="purple nospace">boatnoah.com</span>
+              <span id="hostname" class="purple nospace">boatnoah.com</span>
               <span class="light-dark nospace">:$ ~ </span>
               <span class="space">${userCmd}</span>
             </div>
