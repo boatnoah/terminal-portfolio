@@ -1,9 +1,7 @@
 import {
   linkedin,
   github,
-  resume,
   email,
-  gui,
   help,
   aboutme,
   commands,
@@ -109,11 +107,6 @@ function command(cmd, terminal) {
       newTab(github);
       break;
 
-    case "resume":
-      addLine("Opening resume...", terminal);
-      newTab(resume);
-      break;
-
     case "email":
       addLine(
         `Opening mailto: <a href="${email}">noahkimCS@gmail.com</a>...`,
@@ -121,19 +114,11 @@ function command(cmd, terminal) {
       );
       newTab(email);
       break;
-
-    case "gui":
-      addLine("Opening gui...", terminal);
-      newTab(gui);
-
+      
     case "clear":
       clearContent();
       break;
-
-    case "chess":
-      addLine("Coming Soon...", terminal);
-      break;
-
+      
     case "":
       addLine("", terminal);
       break;
