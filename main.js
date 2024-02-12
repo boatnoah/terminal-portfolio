@@ -41,7 +41,9 @@ function handleEnter(event) {
               <span id="guest" class="green nospace">guest</span>
               <span class="light-dark nospace">@</span>
               <span id="hostname" class="purple nospace">boatnoah.com</span>
-              <span class="light-dark nospace">:$ ~ </span>
+              <span class="light-dark nospace">:</span>
+              <span class="light-dark nospace">$</span>
+              <span class="light-dark space">~</span>
               <span class="space">${userCmd}</span>
             </div>
             <div class="cmd-line"></div>
@@ -169,7 +171,7 @@ function addLine(text, outputSpace) {
 
 function newTab(link) {
   scrollToCurrentInput();
-  setTimeout(function() {
+  setTimeout(function () {
     window.open(link, "_blank");
   }, 500);
 }
