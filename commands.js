@@ -1,7 +1,7 @@
 const linkedin = "https://www.linkedin.com/in/noah-kim-cs/";
 const tiktok = "https://www.tiktok.com/@csboat?_t=8jNKJzYnmVm&_r=1";
 const github = "https://github.com/boatnoah";
-const resume = "https://www.resume.lol/share/lb03iae";
+const resume = "https://www.resume.lol/share/zp03ire";
 const email = "mailto:noahkimCS@gmail.com";
 const gui = "https://boatnoah.github.io/personal-web/";
 
