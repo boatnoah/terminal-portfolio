@@ -169,7 +169,7 @@ function addLine(text, outputSpace) {
 
 function newTab(link) {
   scrollToCurrentInput();
-  setTimeout(function() {
+  setTimeout(function () {
     window.open(link, "_blank");
   }, 500);
 }
