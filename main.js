@@ -169,7 +169,7 @@ function addLine(text, outputSpace) {
 
 function newTab(link) {
   scrollToCurrentInput();
-  setTimeout(function () {
+  setTimeout(function() {
     window.open(link, "_blank");
   }, 500);
 }
@@ -177,7 +177,6 @@ function newTab(link) {
 function clearContent() {
   const contentList = container.querySelectorAll(".output");
   contentList.forEach((element) => {
-    console.log(element);
     element.remove();
   });
   scrollToCurrentInput();
