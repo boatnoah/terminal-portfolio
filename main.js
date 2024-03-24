@@ -136,6 +136,7 @@ function command(cmd, terminal) {
     case "gui":
       addLine("Opening gui...", terminal);
       newTab(gui);
+      break;
 
     case "clear":
       clearContent();
