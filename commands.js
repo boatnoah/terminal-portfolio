@@ -51,7 +51,7 @@ const projects = [
   "<br>",
   `<li><a href="https://boatnoah.github.io/Pathfinding-Project/" target="_blank"><u>Pathfinding Visualizer </u> <i class="fa-solid fa-map-pin"></i></a> - Visualize how popular pathfinding algorithms work!</li>`,
   `<li><a href="https://github.com/boatnoah/Chess-Game-Project" target="_blank"><u>Chess</u> <i class="fa-solid fa-chess"></i></a> - Play a fun chess game!</li>`,
-  `<li><a href="https://github.com/boatnoah/TicTacToeAI-Django" target="_blank"><u>Tic-Tac-Toe AI</u> <i class="fa-solid fa-robot"></i></a> - See how AI has solved Tic-Tac-Toe!</li>`,
+  `<li><a href="https://main--ratemymajor.netlify.app/" target="_blank"><u>RateMyMajor</u> <i class="fa-solid fa-school"></i></a> - RateMyMajor is your ultimate resource for exploring academic programs, reading student reviews, and finding the perfect fit for your future.</li>`,
   "<br>",
 ];
 
