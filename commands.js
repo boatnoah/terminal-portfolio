@@ -1,9 +1,9 @@
 const linkedin = "https://www.linkedin.com/in/noah-kim-cs/";
-const tiktok = "https://www.tiktok.com/@csboat?_t=8jNKJzYnmVm&_r=1";
+const youtube = "https://www.youtube.com/@boatnoah";
 const github = "https://github.com/boatnoah";
 const resume = "https://www.resume.lol/share/zp03ire";
 const email = "mailto:noahkimCS@gmail.com";
-const gui = "https://boatnoah.github.io/personal-web/";
+const gui = "https://boatnoah.com";
 
 const help = [
   "<li> Press <kbd>tab</kbd> for auto-completion and use up and down arrows for previous commands.</li>",
@@ -12,7 +12,7 @@ const help = [
   "<li>projects       - See the latest projects I've built <i class='fa-solid fa-folder'></i></li>",
   "<li>socials        - Displays my socials <i class='fa-solid fa-hashtag'></i></li>",
   "<li>linkedin       - Check out my LinkedIn <i class='fa-brands fa-linkedin'></i></li>",
-  "<li>tiktok         - Check out my TikTok <i class='fa-brands fa-tiktok'></li>",
+  "<li>YouTube        - Check out my YouTube <i class='fa-brands fa-youtube'></li>",
   "<li>github         - My GitHub profile <i class='fa-brands fa-github'></i></li>",
   "<li>resume         - Check out my resume <i class='fa-solid fa-bars'></i></li>",
   "<li>gui            - See a simpler version of my website <i class='fa-solid fa-window-maximize'></i></li>",
@@ -33,12 +33,12 @@ const aboutme = [
 ];
 
 const commands = [
-  "help",
+  "ls",
   "aboutme",
   "projects",
   "socials",
   "linkedin",
-  "tiktok",
+  "youtube",
   "github",
   "resume",
   "email",
@@ -58,14 +58,14 @@ const projects = [
 const socials = [
   "<br>",
   `<li><a href="${linkedin}" target="_blank"> <i class="fa-brands fa-linkedin"></i> <u>linkedin/noah-kim-cs</u></a></li>`,
-  `<li><a href="${tiktok}" target="_blank">   <i class="fa-brands fa-tiktok"></i> <u>tiktok/csboat</u></a></li>`,
+  `<li><a href="${youtube}" target="_blank">   <i class="fa-brands fa-youtube"></i> <u>youtube/@boatnoah</u></a></li>`,
   `<li><a href="${github}" target="_blank">   <i class="fa-brands fa-github"></i> <u>github/boatnoah</u></a></li>`,
   "<br>",
 ];
 
 export {
   linkedin,
-  tiktok,
+  youtube,
   github,
   resume,
   email,

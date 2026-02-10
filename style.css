@@ -3,6 +3,19 @@
   src: url("./assets/CascadiaCode/CaskaydiaCoveNerdFont-Regular.ttf");
 }
 
+:root {
+  --ctp-base: #1e1e2e;
+  --ctp-mantle: #181825;
+  --ctp-text: #cdd6f4;
+  --ctp-subtext1: #bac2de;
+  --ctp-blue: #89b4fa;
+  --ctp-green: #a6e3a1;
+  --ctp-mauve: #cba6f7;
+  --ctp-peach: #fab387;
+  --ctp-sky: #89dceb;
+  --ctp-yellow: #f9e2af;
+}
+
 html {
   overflow: hidden;
 }
@@ -10,8 +23,8 @@ html {
 body {
   margin: 0;
   padding: 0;
-  background-color: #24292e;
-  color: #fafbfc;
+  background-color: var(--ctp-base);
+  color: var(--ctp-text);
   font-family: "Cascadia Code";
   font-size: 100%;
 }
@@ -21,20 +34,67 @@ body {
 }
 
 kbd {
-  background-color: #fafbfc;
-  color: #24292e;
+  background-color: var(--ctp-text);
+  color: var(--ctp-base);
 }
 
 input {
   border: none;
   outline: none;
-  background-color: #24292e;
-  color: #fafbfc;
+  background-color: var(--ctp-base);
+  color: var(--ctp-text);
   font-family: "Cascadia Code";
   font-size: 100%;
-  width: 83%;
-  margin: 0px 0px 0px 9.5px;
+  width: 100%;
+  margin: 0px;
   padding: 0px;
+}
+
+.input-wrap {
+  position: relative;
+  display: inline-block;
+  width: 83%;
+  margin-left: 9.5px;
+}
+
+#prompt-measure {
+  position: absolute;
+  visibility: hidden;
+  white-space: pre;
+  pointer-events: none;
+}
+
+#block-caret {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1ch;
+  height: 1em;
+  background-color: var(--ctp-subtext1);
+  pointer-events: none;
+  opacity: 0;
+  transform: translateX(0px);
+}
+
+#block-caret.visible {
+  opacity: 1;
+  animation: block-caret-blink 1s steps(1, end) infinite;
+}
+
+body.block-caret-ready #prompt {
+  caret-color: transparent;
+}
+
+@keyframes block-caret-blink {
+  0%,
+  49% {
+    opacity: 1;
+  }
+
+  50%,
+  100% {
+    opacity: 0;
+  }
 }
 
 .flexbox {
@@ -42,7 +102,7 @@ input {
 }
 
 a {
-  color: #0d74e7;
+  color: var(--ctp-blue);
   text-decoration: none;
 }
 
@@ -51,15 +111,27 @@ li {
 }
 
 .green {
-  color: #2fbb4f;
+  color: var(--ctp-green);
 }
 
 .light-dark {
-  color: #d3d3d3;
+  color: var(--ctp-subtext1);
 }
 
 .purple {
-  color: #b026ff;
+  color: var(--ctp-mauve);
+}
+
+.prompt-user {
+  color: var(--ctp-peach);
+}
+
+.prompt-host {
+  color: var(--ctp-sky);
+}
+
+.prompt-branch {
+  color: var(--ctp-yellow);
 }
 
 .nospace {

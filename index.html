@@ -1,47 +1,42 @@
 <!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Terminal Portfolio | boatnoah</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image/svg+xml" href="assets/favicon-emoji.svg" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Terminal Portfolio | boatnoah</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="icon" type="image/x-icon" href="assets/terminal-solid.svg"/>
-</head>
-
-<body>
-  <div class="container">
-     <pre id="logo">
-
-██████╗  ██████╗  █████╗ ████████╗███╗   ██╗ ██████╗  █████╗ ██╗  ██╗
-██╔══██╗██╔═══██╗██╔══██╗╚══██╔══╝████╗  ██║██╔═══██╗██╔══██╗██║  ██║
-██████╔╝██║   ██║███████║   ██║   ██╔██╗ ██║██║   ██║███████║███████║
-██╔══██╗██║   ██║██╔══██║   ██║   ██║╚██╗██║██║   ██║██╔══██║██╔══██║
-██████╔╝╚██████╔╝██║  ██║   ██║   ██║ ╚████║╚██████╔╝██║  ██║██║  ██║
-╚═════╝  ╚═════╝ ╚═╝  ╚═╝   ╚═╝   ╚═╝  ╚═══╝ ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝
-                                                                     
-      </pre>
-      Welcome to my Terminal Portfolio! Type 'help' to see the list of
-      available commands.
-    
-
-    <div class="terminal">
-      <label for="prompt">
-        <div class="flexbox">
-          <span class="green nospace">guest</span>
-          <span class="light-dark nospace">@</span>
-          <span class="purple nospace">boatnoah.com</span>
-          <span class="light-dark nospace">:</span>
-          <span class="light-dark nospace">$</span>
-          <span class="light-dark space">~</span>
-          <span><input id="prompt" type="text" autocomplete="off" autofocus/></span>
-        </div>
-      </label>
+  <body>
+    <div class="container">
+      Welcome to my Terminal Portfolio! Type 'ls' to see the list of available
+      commands.
+      <div class="terminal">
+        <label for="prompt">
+          <div class="flexbox">
+            <span class="prompt-user nospace">boatnoah</span>
+            <span class="light-dark nospace">@</span>
+            <span class="prompt-host nospace">portfolio</span>
+            <span class="light-dark nospace">:(</span>
+            <span class="prompt-branch nospace">main</span>
+            <span class="light-dark nospace">)</span>
+            <span class="light-dark nospace">$</span>
+            <span class="light-dark space">~</span>
+            <span class="input-wrap">
+              <input id="prompt" type="text" autocomplete="off" autofocus />
+              <span id="prompt-measure" aria-hidden="true"></span>
+              <span id="block-caret" aria-hidden="true"></span>
+            </span>
+          </div>
+        </label>
+      </div>
     </div>
-  </div>
-  <script type="module" src="main.js"></script>
-  <script type="module" src="commands.js"></script>
-  <script src="https://kit.fontawesome.com/f70b7637af.js" crossorigin="anonymous"></script>
-</body>
-
+    <script type="module" src="main.js"></script>
+    <script type="module" src="commands.js"></script>
+    <script
+      src="https://kit.fontawesome.com/f70b7637af.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>
