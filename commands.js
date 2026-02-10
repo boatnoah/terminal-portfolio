@@ -6,13 +6,13 @@ const email = "mailto:noahkimCS@gmail.com";
 const gui = "https://boatnoah.com";
 
 const help = [
-  "<li> Press <kbd>tab</kbd> for auto-completion and use up and down arrows for previous commands.</li>",
+  "<li> Press <kbd>tab</kbd> for auto-completion, use up/down arrows for history, and <kbd>ctrl/cmd + u</kbd> to clear input.</li>",
   "<br>",
   "<li>aboutme        - Get to know me! <i class='fa-solid fa-user'></i></li>",
   "<li>projects       - See the latest projects I've built <i class='fa-solid fa-folder'></i></li>",
   "<li>socials        - Displays my socials <i class='fa-solid fa-hashtag'></i></li>",
   "<li>linkedin       - Check out my LinkedIn <i class='fa-brands fa-linkedin'></i></li>",
-  "<li>YouTube        - Check out my YouTube <i class='fa-brands fa-youtube'></li>",
+  "<li>youtube        - Check out my YouTube <i class='fa-brands fa-youtube'></li>",
   "<li>github         - My GitHub profile <i class='fa-brands fa-github'></i></li>",
   "<li>resume         - Check out my resume <i class='fa-solid fa-bars'></i></li>",
   "<li>gui            - See a simpler version of my website <i class='fa-solid fa-window-maximize'></i></li>",

@@ -15,15 +15,23 @@ const container = document.querySelector(".container");
 const input = document.getElementById("prompt");
 const inputWrap = document.querySelector(".input-wrap");
 const promptMeasure = document.getElementById("prompt-measure");
+const promptGhost = document.getElementById("prompt-ghost");
 const blockCaret = document.getElementById("block-caret");
 let previousCmds = [];
 let index = 1;
 let blockCaretEnabled = false;
+const promptStateClasses = [
+  "cmd-empty",
+  "cmd-prefix",
+  "cmd-exact",
+  "cmd-invalid",
+];
 
 window.addEventListener("keydown", handleEnter);
 window.addEventListener("keydown", handleUpArrow);
 window.addEventListener("keydown", handleDownArrow);
 window.addEventListener("keydown", handleTabCompletion);
+window.addEventListener("keydown", handleClearInputShortcut);
 
 initBlockCaret();
 
@@ -69,7 +77,7 @@ function handleUpArrow(event) {
     if (!(index + 1 > previousCmds.length)) {
       index++;
     }
-    updateBlockCaret();
+    syncPromptUI();
   }
 }
 
@@ -80,7 +88,7 @@ function handleDownArrow(event) {
     if (index - 1 !== 0) {
       index--;
     }
-    updateBlockCaret();
+    syncPromptUI();
   }
 }
 
@@ -93,9 +101,24 @@ function handleTabCompletion(event) {
     );
     if (match.length > 0) {
       input.value = match[0];
-      updateBlockCaret();
+      syncPromptUI();
     }
   }
+}
+
+function handleClearInputShortcut(event) {
+  const isInputFocused = document.activeElement === input;
+  const isClearShortcut =
+    (event.ctrlKey || event.metaKey) && event.key.toLowerCase() === "u";
+
+  if (!isInputFocused || !isClearShortcut) {
+    return;
+  }
+
+  event.preventDefault();
+  input.value = "";
+  input.setSelectionRange(0, 0);
+  syncPromptUI();
 }
 
 function initBlockCaret() {
@@ -106,11 +129,11 @@ function initBlockCaret() {
   blockCaretEnabled = true;
   document.body.classList.add("block-caret-ready");
   syncCaretMetrics();
-  updateBlockCaret();
+  syncPromptUI();
 
-  input.addEventListener("input", updateBlockCaret);
-  input.addEventListener("click", updateBlockCaret);
-  input.addEventListener("keyup", updateBlockCaret);
+  input.addEventListener("input", syncPromptUI);
+  input.addEventListener("click", syncPromptUI);
+  input.addEventListener("keyup", syncPromptUI);
   input.addEventListener("focus", handlePromptFocus);
   input.addEventListener("blur", handlePromptBlur);
   window.addEventListener("resize", handleResize);
@@ -118,6 +141,8 @@ function initBlockCaret() {
   if (document.activeElement === input) {
     blockCaret.classList.add("visible");
   }
+
+  updatePromptFeedback();
 }
 
 function syncCaretMetrics() {
@@ -138,6 +163,10 @@ function syncCaretMetrics() {
       property,
       styles.getPropertyValue(property),
     );
+
+    if (promptGhost) {
+      promptGhost.style.setProperty(property, styles.getPropertyValue(property));
+    }
   });
 }
 
@@ -147,7 +176,7 @@ function handlePromptFocus() {
   }
 
   blockCaret.classList.add("visible");
-  updateBlockCaret();
+  syncPromptUI();
 }
 
 function handlePromptBlur() {
@@ -156,6 +185,7 @@ function handlePromptBlur() {
   }
 
   blockCaret.classList.remove("visible");
+  clearGhostSuggestion();
 }
 
 function handleResize() {
@@ -164,7 +194,83 @@ function handleResize() {
   }
 
   syncCaretMetrics();
+  syncPromptUI();
+}
+
+function syncPromptUI() {
   updateBlockCaret();
+  updatePromptFeedback();
+}
+
+function measureTextWidth(text) {
+  promptMeasure.textContent = text;
+  return promptMeasure.getBoundingClientRect().width;
+}
+
+function clearGhostSuggestion() {
+  if (!promptGhost) {
+    return;
+  }
+
+  promptGhost.textContent = "";
+  promptGhost.classList.remove("visible");
+}
+
+function updatePromptFeedback() {
+  if (!input) {
+    return;
+  }
+
+  const value = input.value;
+  const normalizedValue = value.toLowerCase();
+  const firstMatch = commands.find((command) =>
+    command.startsWith(normalizedValue),
+  );
+  const isExactMatch = commands.includes(normalizedValue);
+
+  let nextStateClass = "cmd-empty";
+  if (!normalizedValue) {
+    nextStateClass = "cmd-empty";
+  } else if (isExactMatch) {
+    nextStateClass = "cmd-exact";
+  } else if (firstMatch) {
+    nextStateClass = "cmd-prefix";
+  } else {
+    nextStateClass = "cmd-invalid";
+  }
+
+  input.classList.remove(...promptStateClasses);
+  input.classList.add(nextStateClass);
+
+  if (!promptGhost || !promptMeasure) {
+    return;
+  }
+
+  const cursorPosition = input.selectionStart ?? value.length;
+  const isCursorAtEnd = cursorPosition === value.length;
+  const suffix = firstMatch ? firstMatch.slice(normalizedValue.length) : "";
+
+  if (!normalizedValue) {
+    clearGhostSuggestion();
+    return;
+  }
+
+  if (!suffix || isExactMatch || !isCursorAtEnd || document.activeElement !== input) {
+    clearGhostSuggestion();
+    return;
+  }
+
+  const textWidth = measureTextWidth(value);
+  const caretWidth = blockCaret ? blockCaret.offsetWidth : 0;
+  const maxPosition = Math.max(0, input.clientWidth - caretWidth);
+  const ghostX = Math.min(
+    maxPosition,
+    Math.max(0, textWidth - input.scrollLeft),
+  );
+
+  promptGhost.textContent = suffix;
+  promptGhost.style.transform = `translateX(${ghostX}px)`;
+  promptGhost.classList.add("visible");
 }
 
 function updateBlockCaret() {
@@ -173,9 +279,7 @@ function updateBlockCaret() {
   }
 
   const cursorPosition = input.selectionStart ?? input.value.length;
-  promptMeasure.textContent = input.value.slice(0, cursorPosition);
-
-  const textWidth = promptMeasure.getBoundingClientRect().width;
+  const textWidth = measureTextWidth(input.value.slice(0, cursorPosition));
   const maxPosition = Math.max(0, input.clientWidth - blockCaret.offsetWidth);
   const cursorX = Math.min(
     maxPosition,
@@ -285,5 +389,5 @@ function clearContent() {
 function scrollToCurrentInput() {
   window.scrollTo(0, document.body.offsetHeight);
   input.focus();
-  updateBlockCaret();
+  syncPromptUI();
 }

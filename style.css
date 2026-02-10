@@ -14,6 +14,8 @@
   --ctp-peach: #fab387;
   --ctp-sky: #89dceb;
   --ctp-yellow: #f9e2af;
+  --ctp-red: #f38ba8;
+  --ctp-teal: #94e2d5;
 }
 
 html {
@@ -41,19 +43,39 @@ kbd {
 input {
   border: none;
   outline: none;
-  background-color: var(--ctp-base);
+  background-color: transparent;
   color: var(--ctp-text);
   font-family: "Cascadia Code";
   font-size: 100%;
   width: 100%;
   margin: 0px;
   padding: 0px;
+  position: relative;
+  z-index: 2;
+}
+
+#prompt.cmd-empty {
+  color: var(--ctp-text);
+}
+
+#prompt.cmd-prefix {
+  color: var(--ctp-sky);
+}
+
+#prompt.cmd-exact {
+  color: var(--ctp-teal);
+}
+
+#prompt.cmd-invalid {
+  color: var(--ctp-red);
 }
 
 .input-wrap {
   position: relative;
   display: inline-block;
-  width: 83%;
+  flex: 1 1 auto;
+  min-width: 0;
+  width: auto;
   margin-left: 9.5px;
 }
 
@@ -62,6 +84,22 @@ input {
   visibility: hidden;
   white-space: pre;
   pointer-events: none;
+}
+
+#prompt-ghost {
+  position: absolute;
+  top: 0;
+  left: 0;
+  white-space: pre;
+  color: var(--ctp-subtext1);
+  opacity: 0;
+  pointer-events: none;
+  z-index: 1;
+  transform: translateX(0px);
+}
+
+#prompt-ghost.visible {
+  opacity: 0.65;
 }
 
 #block-caret {
@@ -74,6 +112,7 @@ input {
   pointer-events: none;
   opacity: 0;
   transform: translateX(0px);
+  z-index: 3;
 }
 
 #block-caret.visible {
@@ -99,6 +138,8 @@ body.block-caret-ready #prompt {
 
 .flexbox {
   display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
 }
 
 a {
@@ -124,24 +165,31 @@ li {
 
 .prompt-user {
   color: var(--ctp-peach);
+  white-space: nowrap;
 }
 
 .prompt-host {
   color: var(--ctp-sky);
+  white-space: nowrap;
 }
 
 .prompt-branch {
   color: var(--ctp-yellow);
+  white-space: nowrap;
 }
 
 .nospace {
   display: inline-block;
   margin-right: 0px;
+  white-space: nowrap;
+  flex: 0 0 auto;
 }
 
 .space {
   display: inline-block;
   margin-left: 9.5px;
+  white-space: nowrap;
+  flex: 0 0 auto;
 }
 
 /* Mobile devices */
@@ -149,5 +197,13 @@ li {
 @media only screen and (max-width: 600px) {
   #logo {
     font-size: 7px;
+  }
+
+  .space {
+    margin-left: 6px;
+  }
+
+  .input-wrap {
+    margin-left: 6px;
   }
 }
